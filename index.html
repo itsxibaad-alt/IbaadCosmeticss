@@ -1,0 +1,1249 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IBAAT COSMETICS | Premium Beauty Store</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+html{scroll-behavior:smooth}
+
+:root{
+ --navy:#061735;
+ --blue:#1268e8;
+ --royal:#328cff;
+ --ice:#eaf5ff;
+ --white:#fff;
+}
+
+body{
+ font-family:'Poppins',sans-serif;
+ background:#061735;
+ color:white;
+ overflow-x:hidden;
+}
+
+/* BACKGROUND EFFECTS */
+
+.background-glow{
+ position:fixed;
+ width:350px;
+ height:350px;
+ border-radius:50%;
+ filter:blur(110px);
+ opacity:.4;
+ pointer-events:none;
+ z-index:-1;
+}
+
+.glow-one{
+ background:#087aff;
+ top:10%;
+ left:-150px;
+ animation:glow 8s infinite alternate;
+}
+
+.glow-two{
+ background:#36baff;
+ bottom:5%;
+ right:-150px;
+ animation:glow 10s infinite alternate-reverse;
+}
+
+@keyframes glow{
+ from{transform:translate(0,0)}
+ to{transform:translate(130px,100px)}
+}
+
+.bubble{
+ position:fixed;
+ width:12px;
+ height:12px;
+ background:#48aaff;
+ border-radius:50%;
+ opacity:.4;
+ z-index:-1;
+ animation:bubble 12s linear infinite;
+ pointer-events:none;
+}
+
+.b1{left:10%;bottom:-30px}
+.b2{left:45%;bottom:-30px;animation-delay:3s}
+.b3{left:80%;bottom:-30px;animation-delay:6s}
+
+@keyframes bubble{
+ 0%{transform:translateY(0);opacity:0}
+ 30%{opacity:.6}
+ 100%{transform:translateY(-110vh) scale(2);opacity:0}
+}
+
+/* HEADER */
+
+.topbar{
+ background:#0c4388;
+ text-align:center;
+ padding:10px;
+ font-size:11px;
+ letter-spacing:2px;
+}
+
+header{
+ position:sticky;
+ top:0;
+ z-index:100;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:18px 6%;
+ background:rgba(4,19,44,.94);
+ backdrop-filter:blur(18px);
+ border-bottom:1px solid #ffffff25;
+}
+
+.logo{
+ font-size:24px;
+ font-weight:800;
+ letter-spacing:1px;
+}
+
+.logo span{color:#54baff}
+
+nav{
+ display:flex;
+ gap:25px;
+}
+
+nav a{
+ color:#d8eaff;
+ text-decoration:none;
+ font-size:12px;
+ transition:.3s;
+}
+
+nav a:hover{color:#56bdff}
+
+.cart-button{
+ background:linear-gradient(120deg,#1674ed,#4cbaff);
+ color:white;
+ padding:12px 20px;
+ border:0;
+ border-radius:30px;
+ font-weight:700;
+}
+
+/* HERO */
+
+.hero{
+ min-height:590px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:35px;
+ padding:75px 8%;
+ position:relative;
+ background:
+ radial-gradient(circle at 75% 40%,#1558a5 0%,transparent 35%),
+ linear-gradient(120deg,#061735,#0c3268,#061735);
+ overflow:hidden;
+}
+
+.hero-text{
+ max-width:560px;
+ z-index:2;
+}
+
+.hero-label{
+ color:#69c6ff;
+ font-size:12px;
+ letter-spacing:4px;
+ font-weight:700;
+}
+
+.hero h1{
+ font-size:clamp(42px,6vw,72px);
+ line-height:1.15;
+ margin:20px 0;
+ font-weight:800;
+}
+
+.hero h1 span{
+ background:linear-gradient(90deg,#48adff,#d8f3ff);
+ -webkit-background-clip:text;
+ color:transparent;
+}
+
+.hero p{
+ color:#c1d9f5;
+ font-size:14px;
+ line-height:2;
+}
+
+.main-btn{
+ margin-top:25px;
+ background:linear-gradient(120deg,#1268e8,#50baff);
+ border:0;
+ padding:15px 30px;
+ color:white;
+ border-radius:30px;
+ font-weight:700;
+ cursor:pointer;
+ transition:.3s;
+}
+
+.main-btn:hover{
+ transform:translateY(-5px);
+ box-shadow:0 10px 30px #168aff77;
+}
+
+.hero-image{
+ width:43%;
+ height:410px;
+ object-fit:cover;
+ border-radius:180px 180px 25px 25px;
+ border:3px solid #ffffff66;
+ box-shadow:0 20px 65px #167aff66;
+ animation:heroFloat 5s infinite ease-in-out;
+}
+
+@keyframes heroFloat{
+ 50%{transform:translateY(-15px)}
+}
+
+/* FEATURES STRIP */
+
+.features-strip{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ padding:25px 7%;
+ gap:15px;
+ background:#0b2d5b;
+ border-top:1px solid #ffffff22;
+ border-bottom:1px solid #ffffff22;
+ text-align:center;
+}
+
+.features-strip div{
+ color:#d6eaff;
+ font-size:12px;
+}
+
+/* SECTIONS */
+
+.section{
+ padding:75px 6%;
+}
+
+.heading{
+ text-align:center;
+ margin-bottom:35px;
+}
+
+.heading h2{
+ font-size:34px;
+ font-weight:800;
+}
+
+.heading p{
+ color:#bad5f5;
+ font-size:13px;
+ margin-top:10px;
+}
+
+/* SEARCH AND CATEGORIES */
+
+.search{
+ display:block;
+ width:min(450px,100%);
+ margin:0 auto 30px;
+ padding:15px 20px;
+ border:1px solid #ffffff44;
+ border-radius:30px;
+ background:#ffffff12;
+ color:white;
+ outline:none;
+}
+
+.search::placeholder{color:#c0d9f5}
+
+.categories{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:12px;
+ margin-bottom:35px;
+}
+
+.cat-btn{
+ padding:10px 20px;
+ border:1px solid #ffffff33;
+ border-radius:30px;
+ background:#ffffff12;
+ color:white;
+ cursor:pointer;
+}
+
+.cat-btn.active,
+.cat-btn:hover{
+ background:#1675ed;
+ border-color:#1675ed;
+}
+
+/* PRODUCT GRID */
+
+.products{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:23px;
+}
+
+.product{
+ background:white;
+ color:#092653;
+ border-radius:18px;
+ overflow:hidden;
+ transition:.35s;
+ box-shadow:0 12px 35px #0005;
+}
+
+.product:hover{
+ transform:translateY(-9px);
+ box-shadow:0 15px 40px #168aff55;
+}
+
+.product img{
+ width:100%;
+ height:235px;
+ object-fit:cover;
+ background:#eaf4ff;
+}
+
+.product-info{padding:16px}
+
+.product-brand{
+ font-size:10px;
+ color:#1675e8;
+ font-weight:800;
+ letter-spacing:2px;
+}
+
+.product h3{
+ font-size:14px;
+ margin:9px 0;
+}
+
+.price{
+ color:#1268e8;
+ font-size:20px;
+ font-weight:800;
+}
+
+.add{
+ display:block;
+ width:100%;
+ padding:12px;
+ margin-top:13px;
+ background:#092653;
+ color:white;
+ border:0;
+ border-radius:9px;
+ cursor:pointer;
+ font-weight:700;
+}
+
+.add:hover{background:#1675e8}
+
+/* PROMOTION */
+
+.promo{
+ margin:20px 6%;
+ padding:60px 20px;
+ text-align:center;
+ border-radius:25px;
+ background:
+ radial-gradient(circle at center,#267fe755,transparent 65%),
+ linear-gradient(120deg,#061735,#10458c,#061735);
+ border:1px solid #ffffff33;
+}
+
+.promo h2{font-size:35px}
+.promo p{color:#c5ddf6;margin-top:12px}
+
+/* SERVICES */
+
+.services{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
+}
+
+.service{
+ padding:30px 20px;
+ text-align:center;
+ background:#ffffff12;
+ border:1px solid #ffffff33;
+ border-radius:18px;
+ transition:.3s;
+}
+
+.service:hover{
+ transform:translateY(-8px);
+ background:#ffffff22;
+}
+
+.service .icon{font-size:35px}
+.service h3{margin:13px 0}
+.service p{font-size:12px;color:#c3daf5}
+
+/* FOOTER */
+
+footer{
+ background:#030e23;
+ border-top:1px solid #ffffff22;
+ padding:50px 7%;
+}
+
+.footer-grid{
+ display:grid;
+ grid-template-columns:2fr 1fr 1fr;
+ gap:30px;
+}
+
+footer h3{margin-bottom:15px}
+footer p,footer a{
+ display:block;
+ color:#c3d9f3;
+ font-size:12px;
+ line-height:2.2;
+ text-decoration:none;
+}
+
+.copyright{
+ text-align:center;
+ border-top:1px solid #ffffff22;
+ padding-top:20px;
+ margin-top:30px;
+ font-size:11px;
+ color:#a9c6e8;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+ position:fixed;
+ right:20px;
+ bottom:20px;
+ z-index:150;
+ text-decoration:none;
+ background:#19c76a;
+ color:white;
+ padding:14px 20px;
+ border-radius:40px;
+ font-weight:700;
+ box-shadow:0 5px 25px #19c76a66;
+}
+
+/* CART AND CHECKOUT */
+
+.overlay{
+ position:fixed;
+ inset:0;
+ z-index:300;
+ background:#000b;
+ display:none;
+ justify-content:flex-end;
+}
+
+.overlay.show{display:flex}
+
+.drawer{
+ width:min(500px,100%);
+ height:100%;
+ overflow-y:auto;
+ background:#f6faff;
+ color:#102a50;
+ padding:25px;
+ animation:slide .35s;
+}
+
+@keyframes slide{
+ from{transform:translateX(100%)}
+ to{transform:translateX(0)}
+}
+
+.drawer-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-bottom:25px;
+}
+
+.drawer-head button{
+ border:0;
+ padding:10px;
+ border-radius:8px;
+ background:#dfedff;
+ cursor:pointer;
+}
+
+.steps{
+ display:flex;
+ justify-content:space-between;
+ margin-bottom:25px;
+}
+
+.step{
+ flex:1;
+ text-align:center;
+ color:#9aabc0;
+ font-size:10px;
+}
+
+.step span{
+ display:block;
+ background:#e0ebf8;
+ width:28px;
+ height:28px;
+ padding:6px;
+ margin:0 auto 6px;
+ border-radius:50%;
+}
+
+.step.active{color:#1268e8;font-weight:800}
+.step.active span{background:#1268e8;color:white}
+
+.cart-item{
+ display:flex;
+ gap:12px;
+ align-items:center;
+ padding:13px 0;
+ border-bottom:1px solid #dce8f5;
+}
+
+.cart-item img{
+ width:65px;
+ height:65px;
+ object-fit:cover;
+ border-radius:9px;
+}
+
+.cart-item h4{font-size:12px}
+.cart-item p{color:#1268e8;font-weight:700}
+
+.qty{
+ display:flex;
+ gap:10px;
+ align-items:center;
+ margin-top:7px;
+}
+
+.qty button{
+ border:0;
+ padding:4px 10px;
+ border-radius:5px;
+ background:#dcecff;
+ cursor:pointer;
+}
+
+.remove{
+ margin-left:auto;
+ border:0;
+ color:red;
+ background:none;
+ cursor:pointer;
+}
+
+.summary{
+ background:#e6f1ff;
+ padding:15px;
+ border-radius:12px;
+ margin-top:20px;
+}
+
+.summary-row{
+ display:flex;
+ justify-content:space-between;
+ padding:7px 0;
+ font-size:13px;
+}
+
+.total{
+ border-top:1px solid #c5d9ef;
+ font-weight:800;
+ color:#1268e8;
+}
+
+.next{
+ width:100%;
+ padding:15px;
+ border:0;
+ border-radius:10px;
+ background:linear-gradient(120deg,#092653,#1686ff);
+ color:white;
+ font-weight:800;
+ margin-top:17px;
+ cursor:pointer;
+}
+
+.back{
+ background:#dcecff;
+ color:#092653;
+}
+
+.field{margin:15px 0}
+
+.field label{
+ display:block;
+ font-size:12px;
+ font-weight:700;
+ margin-bottom:7px;
+}
+
+.field input,.field textarea{
+ width:100%;
+ padding:13px;
+ border:1px solid #cbdcf0;
+ border-radius:8px;
+ outline:none;
+ font-family:inherit;
+}
+
+.field input:focus,.field textarea:focus{
+ border-color:#1268e8;
+}
+
+.payment{
+ display:block;
+ padding:15px;
+ background:white;
+ border:1px solid #cbdcf0;
+ border-radius:10px;
+ margin:12px 0;
+ font-size:13px;
+}
+
+.success{
+ text-align:center;
+ padding:50px 10px;
+}
+
+.success h2{color:#1268e8;margin:15px}
+
+@media(max-width:900px){
+ .products{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:600px){
+ header{flex-wrap:wrap;padding:13px 4%}
+ .logo{font-size:20px}
+ nav{order:3;width:100%;justify-content:center;gap:13px}
+ nav a{font-size:10px}
+ .hero{flex-direction:column;text-align:center;padding:55px 6%}
+ .hero-image{width:90%;height:280px}
+ .hero h1{font-size:44px}
+ .products{grid-template-columns:repeat(2,1fr);gap:12px}
+ .product img{height:170px}
+ .product-info{padding:11px}
+ .product h3{font-size:12px}
+ .price{font-size:16px}
+ .features-strip{grid-template-columns:1fr}
+ .services{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr}
+ .heading h2{font-size:26px}
+ .promo h2{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+
+<div class="topbar">
+WELCOME TO IBAAT COSMETICS ✨ | PREMIUM BEAUTY COLLECTION
+</div>
+
+<header>
+ <div class="logo">IBAAT <span>COSMETICS.</span></div>
+
+ <nav>
+  <a href="#home">HOME</a>
+  <a href="#shop">SHOP</a>
+  <a href="#services">SERVICES</a>
+  <a href="#contact">CONTACT</a>
+ </nav>
+
+ <button class="cart-button" onclick="openCart()">
+  🛒 CART (<span id="count">0</span>)
+ </button>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+ <div class="hero-text">
+  <div class="hero-label">THE WORLD OF BEAUTY</div>
+
+  <h1>Beauty Is Your <span>Superpower.</span></h1>
+
+  <p>
+   Discover premium makeup, skincare and beauty essentials.
+   Explore your favourite beauty collections at Ibaat Cosmetics.
+   Your beauty journey starts here.
+  </p>
+
+  <button class="main-btn" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+   EXPLORE COLLECTION →
+  </button>
+ </div>
+
+ <img class="hero-image"
+ src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1000"
+ alt="Cosmetics collection">
+
+</section>
+
+<div class="features-strip">
+ <div>💎 Premium Beauty Collection</div>
+ <div>🚚 Delivery Across Pakistan</div>
+ <div>💬 WhatsApp Customer Support</div>
+</div>
+
+<!-- SHOP -->
+
+<section class="section" id="shop">
+
+ <div class="heading">
+  <h2>Discover Our Collection</h2>
+  <p>Find your favourite beauty products.</p>
+ </div>
+
+ <input class="search" id="search"
+ placeholder="Search your favourite products..."
+ oninput="renderProducts()">
+
+ <div class="categories">
+  <button class="cat-btn active" onclick="changeCat('All',this)">All</button>
+  <button class="cat-btn" onclick="changeCat('Makeup',this)">Makeup</button>
+  <button class="cat-btn" onclick="changeCat('Skincare',this)">Skincare</button>
+  <button class="cat-btn" onclick="changeCat('Lips',this)">Lip Products</button>
+  <button class="cat-btn" onclick="changeCat('Fragrance',this)">Fragrance</button>
+ </div>
+
+ <div class="products" id="products"></div>
+
+</section>
+
+<section class="promo">
+ <h2>✨ Feel Beautiful. Be Confident.</h2>
+ <p>Explore the beauty collection you deserve.</p>
+ <button class="main-btn" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+  SHOP NOW
+ </button>
+</section>
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+ <div class="heading">
+  <h2>Why Choose Ibaat?</h2>
+  <p>Beauty shopping made simple.</p>
+ </div>
+
+ <div class="services">
+  <div class="service">
+   <div class="icon">💎</div>
+   <h3>Premium Products</h3>
+   <p>Discover popular beauty brands and products.</p>
+  </div>
+
+  <div class="service">
+   <div class="icon">🚚</div>
+   <h3>Home Delivery</h3>
+   <p>Convenient delivery to your doorstep.</p>
+  </div>
+
+  <div class="service">
+   <div class="icon">💬</div>
+   <h3>Customer Support</h3>
+   <p>Get in touch with us through WhatsApp.</p>
+  </div>
+ </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+ <div class="footer-grid">
+
+  <div>
+   <h3>IBAAT COSMETICS.</h3>
+   <p>Your destination for beauty, makeup and skincare.</p>
+  </div>
+
+  <div>
+   <h3>Quick Links</h3>
+   <a href="#home">Home</a>
+   <a href="#shop">Shop</a>
+   <a href="#services">Services</a>
+  </div>
+
+  <div>
+   <h3>Contact</h3>
+   <p>WhatsApp: 0302 6605256</p>
+   <p>Email: itsxibaat@gmail.com</p>
+   <p>Pakistan</p>
+  </div>
+
+ </div>
+
+ <div class="copyright">
+  © 2026 IBAAT COSMETICS. All Rights Reserved.
+ </div>
+
+</footer>
+
+<a class="whatsapp"
+ href="https://wa.me/923026605256"
+ target="_blank">WhatsApp</a>
+
+<!-- CART DRAWER -->
+
+<div class="overlay" id="overlay" onclick="outsideClose(event)">
+
+ <div class="drawer">
+
+  <div class="drawer-head">
+   <h2 id="drawerTitle">Shopping Cart</h2>
+   <button onclick="closeCart()">✕</button>
+  </div>
+
+  <div class="steps" id="steps">
+   <div class="step active"><span>1</span>Cart</div>
+   <div class="step"><span>2</span>Details</div>
+   <div class="step"><span>3</span>Address</div>
+   <div class="step"><span>4</span>Payment</div>
+  </div>
+
+  <div id="content"></div>
+
+ </div>
+</div>
+
+<script>
+
+/* PRODUCT DATA */
+
+const productsData=[
+ {id:1,name:"Fit Me Foundation",brand:"Maybelline",cat:"Makeup",price:4500,img:"https://images.unsplash.com/photo-1631214540242-7b2c7a7c2c5c?w=600"},
+ {id:2,name:"Matte Lipstick",brand:"Maybelline",cat:"Lips",price:3200,img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600"},
+ {id:3,name:"Luxury Foundation",brand:"Huda Beauty",cat:"Makeup",price:8900,img:"https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600"},
+ {id:4,name:"Hydrating Serum",brand:"The Ordinary",cat:"Skincare",price:6500,img:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600"},
+ {id:5,name:"Vitamin C Serum",brand:"Garnier",cat:"Skincare",price:2800,img:"https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600"},
+ {id:6,name:"Lip Gloss",brand:"NYX",cat:"Lips",price:3500,img:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600"},
+ {id:7,name:"Face Cream",brand:"Nivea",cat:"Skincare",price:2200,img:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600"},
+ {id:8,name:"Luxury Perfume",brand:"Calvin Klein",cat:"Fragrance",price:12500,img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600"},
+ {id:9,name:"Volume Mascara",brand:"Maybelline",cat:"Makeup",price:3900,img:"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600"},
+ {id:10,name:"Liquid Blush",brand:"Rare Beauty",cat:"Makeup",price:7500,img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600"},
+ {id:11,name:"Lip Treatment",brand:"Laneige",cat:"Lips",price:5800,img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600"},
+ {id:12,name:"Moisturizer",brand:"CeraVe",cat:"Skincare",price:5200,img:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600"}
+];
+
+let cart=[];
+let category="All";
+let customer={};
+let step=1;
+
+function formatPrice(n){
+ return "Rs. "+n.toLocaleString("en-PK");
+}
+
+/* DISPLAY PRODUCTS */
+
+function renderProducts(){
+
+ let search=document.getElementById("search").value.toLowerCase();
+
+ let filtered=productsData.filter(p=>
+  (category==="All" || p.cat===category) &&
+  (p.name.toLowerCase().includes(search) ||
+   p.brand.toLowerCase().includes(search))
+ );
+
+ document.getElementById("products").innerHTML=
+ filtered.map(p=>`
+  <div class="product">
+   <img src="${p.img}" alt="${p.name}"
+   onerror="this.src='https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600'">
+
+   <div class="product-info">
+    <div class="product-brand">${p.brand}</div>
+    <h3>${p.name}</h3>
+    <div class="price">${formatPrice(p.price)}</div>
+    <button class="add" onclick="addCart(${p.id})">
+     ADD TO CART +
+    </button>
+   </div>
+  </div>
+ `).join("") || "<p>No products found.</p>";
+}
+
+function changeCat(cat,btn){
+ category=cat;
+ document.querySelectorAll(".cat-btn").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ renderProducts();
+}
+
+/* CART SYSTEM */
+
+function saveCart(){
+ document.getElementById("count").textContent=
+ cart.reduce((s,p)=>s+p.qty,0);
+}
+
+function addCart(id){
+ let item=cart.find(p=>p.id===id);
+
+ if(item){
+  item.qty++;
+ }else{
+  let p=productsData.find(p=>p.id===id);
+  cart.push({...p,qty:1});
+ }
+
+ saveCart();
+ openCart();
+}
+
+function total(){
+ return cart.reduce((s,p)=>s+p.price*p.qty,0);
+}
+
+function openCart(){
+ step=1;
+ document.getElementById("overlay").classList.add("show");
+ renderCheckout();
+}
+
+function closeCart(){
+ document.getElementById("overlay").classList.remove("show");
+}
+
+function outsideClose(e){
+ if(e.target.id==="overlay")closeCart();
+}
+
+function quantity(id,n){
+ let p=cart.find(x=>x.id===id);
+ if(!p)return;
+ p.qty+=n;
+ if(p.qty<=0)cart=cart.filter(x=>x.id!==id);
+ saveCart();
+ renderCheckout();
+}
+
+function removeProduct(id){
+ cart=cart.filter(p=>p.id!==id);
+ saveCart();
+ renderCheckout();
+}
+
+/* CHECKOUT */
+
+function renderCheckout(){
+
+ let content=document.getElementById("content");
+ let steps=document.getElementById("steps");
+
+ steps.style.display="flex";
+
+ document.querySelectorAll(".step").forEach((s,i)=>{
+  s.classList.toggle("active",i+1===step);
+ });
+
+ if(step===1){
+
+  document.getElementById("drawerTitle").textContent="Your Cart";
+
+  if(cart.length===0){
+   content.innerHTML=`
+    <div class="success">
+     <h2>Your Cart Is Empty!</h2>
+     <p>Explore our cosmetics collection.</p>
+     <button class="next" onclick="closeCart()">CONTINUE SHOPPING</button>
+    </div>`;
+   return;
+  }
+
+  content.innerHTML=`
+   ${cart.map(p=>`
+    <div class="cart-item">
+     <img src="${p.img}" alt="">
+     <div style="flex:1">
+      <h4>${p.name}</h4>
+      <p>${formatPrice(p.price*p.qty)}</p>
+      <div class="qty">
+       <button onclick="quantity(${p.id},-1)">−</button>
+       ${p.qty}
+       <button onclick="quantity(${p.id},1)">+</button>
+      </div>
+     </div>
+     <button class="remove" onclick="removeProduct(${p.id})">Remove</button>
+    </div>
+   `).join("")}
+
+   <div class="summary">
+    <div class="summary-row">
+     <span>Subtotal</span><b>${formatPrice(total())}</b>
+    </div>
+    <div class="summary-row total">
+     <span>Total</span><span>${formatPrice(total())}</span>
+    </div>
+   </div>
+
+   <button class="next" onclick="goNext()">CONTINUE TO CHECKOUT →</button>
+  `;
+ }
+
+ if(step===2){
+
+  document.getElementById("drawerTitle").textContent="Customer Details";
+
+  content.innerHTML=`
+   <h3>Personal Information</h3>
+
+   <div class="field">
+    <label>Full Name *</label>
+    <input id="name" placeholder="Your full name" value="${customer.name||''}">
+   </div>
+
+   <div class="field">
+    <label>Email *</label>
+    <input id="email" type="email" placeholder="Your email" value="${customer.email||''}">
+   </div>
+
+   <div class="field">
+    <label>Phone Number *</label>
+    <input id="phone" placeholder="03XXXXXXXXX" value="${customer.phone||''}">
+   </div>
+
+   <button class="next" onclick="saveDetails()">CONTINUE →</button>
+   <button class="next back" onclick="previous()">BACK</button>
+  `;
+ }
+
+ if(step===3){
+
+  document.getElementById("drawerTitle").textContent="Delivery Address";
+
+  content.innerHTML=`
+   <h3>Shipping Information</h3>
+
+   <div class="field">
+    <label>Full Address *</label>
+    <textarea id="address" rows="3" placeholder="House, street, area">${customer.address||''}</textarea>
+   </div>
+
+   <div class="field">
+    <label>City *</label>
+    <input id="city" placeholder="Your city" value="${customer.city||''}">
+   </div>
+
+   <div class="field">
+    <label>Postal Code</label>
+    <input id="postal" placeholder="Postal code" value="${customer.postal||''}">
+   </div>
+
+   <div class="field">
+    <label>Order Notes</label>
+    <textarea id="notes" rows="2">${customer.notes||''}</textarea>
+   </div>
+
+   <button class="next" onclick="saveAddress()">CONTINUE TO PAYMENT →</button>
+   <button class="next back" onclick="previous()">BACK</button>
+  `;
+ }
+
+ if(step===4){
+
+  document.getElementById("drawerTitle").textContent="Payment Method";
+
+  content.innerHTML=`
+   <h3>Select Your Payment Method</h3>
+
+   <div class="summary">
+    <div class="summary-row">
+     <span>Subtotal</span><b>${formatPrice(total())}</b>
+    </div>
+    <div class="summary-row total">
+     <span>Total</span><span>${formatPrice(total())}</span>
+    </div>
+   </div>
+
+   <label class="payment">
+    <input type="radio" name="payment" value="Cash on Delivery" checked>
+    💵 Cash on Delivery
+   </label>
+
+   <label class="payment">
+    <input type="radio" name="payment" value="Bank Transfer">
+    🏦 Bank Transfer (Arrange with store)
+   </label>
+
+   <label class="payment">
+    <input type="radio" name="payment" value="WhatsApp Payment Confirmation">
+    📱 Payment Confirmation Through WhatsApp
+   </label>
+
+   <button class="next" onclick="placeOrder()">CONFIRM ORDER →</button>
+   <button class="next back" onclick="previous()">BACK</button>
+  `;
+ }
+}
+
+function goNext(){
+ if(cart.length===0)return;
+ step=2;
+ renderCheckout();
+}
+
+function previous(){
+ if(step>1){
+  step--;
+  renderCheckout();
+ }
+}
+
+function saveDetails(){
+
+ let name=document.getElementById("name").value.trim();
+ let email=document.getElementById("email").value.trim();
+ let phone=document.getElementById("phone").value.trim();
+
+ if(!name||!email||!phone){
+  alert("Please fill all customer details.");
+  return;
+ }
+
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+  alert("Please enter a valid email.");
+  return;
+ }
+
+ customer={...customer,name,email,phone};
+ step=3;
+ renderCheckout();
+}
+
+function saveAddress(){
+
+ let address=document.getElementById("address").value.trim();
+ let city=document.getElementById("city").value.trim();
+
+ if(!address||!city){
+  alert("Please enter your address and city.");
+  return;
+ }
+
+ customer={
+  ...customer,
+  address,
+  city,
+  postal:document.getElementById("postal").value,
+  notes:document.getElementById("notes").value
+ };
+
+ step=4;
+ renderCheckout();
+}
+
+/* WHATSAPP ORDER */
+
+function placeOrder(){
+
+ let payment=document.querySelector('input[name="payment"]:checked').value;
+
+ let orderId="IBAAT-"+Date.now().toString().slice(-7);
+
+ let message=
+ "NEW ORDER - IBAAT COSMETICS\n"+
+ "Order ID: "+orderId+"\n\n"+
+ "Name: "+customer.name+"\n"+
+ "Email: "+customer.email+"\n"+
+ "Phone: "+customer.phone+"\n"+
+ "Address: "+customer.address+", "+customer.city+"\n"+
+ "Payment: "+payment+"\n\n"+
+ "PRODUCTS:\n";
+
+ cart.forEach(p=>{
+  message+=p.name+" x "+p.qty+" = "+formatPrice(p.price*p.qty)+"\n";
+ });
+
+ message+="\nTOTAL: "+formatPrice(total());
+
+ message+="\nNotes: "+(customer.notes||"None");
+
+ document.getElementById("steps").style.display="none";
+ document.getElementById("drawerTitle").textContent="Order Confirmation";
+
+ document.getElementById("content").innerHTML=`
+  <div class="success">
+   <div style="font-size:60px">✓</div>
+   <h2>Thank You!</h2>
+   <p>Your order is ready to send to Ibaat Cosmetics.</p>
+   <h3>${orderId}</h3>
+
+   <button class="next" onclick="sendWhatsApp()">
+    SEND ORDER TO WHATSAPP
+   </button>
+
+   <button class="next back" onclick="finishOrder()">
+    FINISH
+   </button>
+  </div>
+ `;
+
+ window.currentOrderMessage=message;
+}
+
+function sendWhatsApp(){
+ let url="https://wa.me/923026605256?text="+
+ encodeURIComponent(window.currentOrderMessage);
+ window.open(url,"_blank");
+}
+
+function finishOrder(){
+ cart=[];
+ customer={};
+ saveCart();
+ closeCart();
+}
+
+/* START WEBSITE */
+
+renderProducts();
+saveCart();
+
+</script>
+
+</body>
+</html>
+```
